@@ -1,8 +1,7 @@
 function triple(x) {
   return x * 3
 }
-
-//same as:
+//this is the same as:
 
 var triple = function(x) {
   return x * 3
@@ -41,7 +40,7 @@ var dogs = animals.filter(function(animal) { //filter acceps one argument that i
 
 /* *functions that are send into other functions are called Callback functions because the host function in
 this case fiter will call back to them.
-~Filter~ is a method on the array object, that takes another functions as its argument. And use it that function to filter the array.  
+~Filter~ is a method on the array object, that takes another functions as its argument. And use it that function to filter the array.
 Filter will loop through each item in the array and for each item is going to pass it into the callback function.
 And when it does, it will expect the the callback function to return either true or false to tell filter whether or not
 this item should be in the new array. When it finish it will return the new filter array that will be dogs.
