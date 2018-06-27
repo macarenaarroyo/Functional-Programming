@@ -1,11 +1,21 @@
+//In JavaScript functions are values. Just like string or numbers, functions can be assigned to variables or passed into other functions. => Higher Order Functions. 
+
+
+//Example:
+
 function triple(x) {
   return x * 3
 }
-//this is the same as:
-
+//this is the same as: We are creating an anonymous function and assigning it to a variable.
 var triple = function(x) {
   return x * 3
 }
+// like any other value we can pass it around.
+var waffle = triple
+
+waflle(30) // will return 90.
+
+
 /*JS creates an anonymous function and assigns it to a variable.
 In functional programming functions are values.
 Just like string or numbers, functions can be assigned to variables
