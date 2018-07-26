@@ -1,0 +1,152 @@
+const game = {
+    'suspects': [{
+      name: 'Rusty',
+      color: 'orange'
+    }, {
+      name: 'Mis Scarlett',
+      color: 'red'
+    }]
+  }
+  // object supspets which is a array of properties of the object.
+  >
+  game[suspects];
+ReferenceError: suspects is not defined >
+  game['suspects'];
+[{
+    name: 'Rusty',
+    color: 'orange'
+  },
+  {
+    name: 'Mis Scarlett',
+    color: 'red'
+  }
+]
+/*explaining loops:
+Arrays works well with for loop i = 0; because of the numerical indeces
+Objects works better with the for end loop (for var key end)
+
+Note: objects dont have a length, arrays do.
+
+
+*/
+
+function foo() {
+  for (let i = 0; game.suspects.length; i++) {
+    console.log(game.suspects[i]); //what is i the first time it runs?
+  }
+}
+
+foo()
+
+//excercise 1 solution
+var gameLoop = function(game) {
+  for (var i = 0; game.suspects.length; i++) {
+    console.log('outer loop')
+    for (var key in game.suspects[i]) {
+      console.log('inner loop')
+      if (game.suspects[i][key]) === 'Rusty') {
+      console.log('Found them ! ')
+    } else {
+      console.log('Next time!');
+    }
+  }
+}
+}
+//excercise 2
+
+//solution
+const game = {
+    'suspects': [{
+      name: 'Rusty',
+      color: 'orange'
+    }, {
+      name: 'Mis Scarlett',
+      color: 'red'
+    }]
+  }
+
+// first way, easier to understand but not destructuring
+const firstColor = game.suspects[0].color;
+const secondColor = game.suspects[1].color;
+
+firstColor;
+secondColor;
+
+// second way
+var [color, color2] = [game.suspects[0].color, game.suspects[1].color];
+
+color;
+color2;
+
+// making a variable color that ligns up with the firstColor property and making
+var [{color: firstColor}, {color : secondColor}] = suspects;
+
+
+// List Transformations
+function CreateSuspectObjects(name) {
+  return {
+    name: name,
+    color.name.split(' ')[2],
+    speak: function () {
+      console.log("My name is ", name);
+    }
+  };
+};
+
+var suspects = ['Mis Scarlett', 'Colonel Mustard', 'Mr. White'];
+
+//Loopig _.each
+
+function CreateSuspectObjects(name) {
+  return {
+    name: name,
+    color.name.split(' ')[1],
+    speak: function () {
+      console.log("My name is ", name);
+    }
+  };
+};
+
+var suspects = ['Mis Scarlett', 'Colonel Mustard', 'Mr. White'];
+
+var suspectsList = [];
+
+_.each(suspects, function(name) { //_.each takes 2 arguments, first is a list and second is a callback function also called iterator function (things that can be looped). The callback function is gonna be called on each item on the suspects list.
+  let suspectObj = CreateSuspectObjects(name);
+  suspectsList.push(suspectObj);
+});
+
+//consolidating into one line
+
+_.each(suspects, function(name) {
+  suspectsList.push(CreateSuspectObjects(name));
+});
+
+//Exercise:
+cosnt _  = {};
+
+_.each  = function(list, callback) {
+// make sure it works with Objects and arrays
+  //How do we check if something is an array? if (typeof list === array) WRONG! Arrays are always objects so this is always going to return false.
+if (Array.isArray(list)) { //evaluate to true.
+  // loop through the array
+  for (var i = 0; i < list.length; i++){
+    call callback(list.[i], i, list); // .forEach(callback function(value, index, list){ … } );
+  }
+    // call the callback with a list item
+} else {
+  // loop through objects
+    // call the callback with a list item.
+    for ( var key in list) {
+      callback(list[key], key, list) //braket because is a variable and not numerical. 
+    }
+}
+    // celebrate
+}
+_.each[('Sally' , 'Jay', 'Bill')] /*Sally youngest, Jay middle, Bill oldest*/, function(name, i, list){  //Sally, i=0, list is list.
+  if (name[i + 1]) { //next name is Jay and this will evaluate to true.
+    console.log(name, 'is younger than', list[i +1]) //will print Sally is younger than Jay, Jay is younger than Bill.
+  } else {
+    console.log(name, 'is the oldest') // will print Bill is the oldest.
+  }
+}
